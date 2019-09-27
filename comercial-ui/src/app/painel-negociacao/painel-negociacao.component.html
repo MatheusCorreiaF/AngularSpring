@@ -1,0 +1,36 @@
+<div class="container" style="margin: 20px">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="nomeProspecto">Nome Prospecto</span>
+        </div>
+        <input type="text" [(ngModel)]="oportunidade.nomeProspecto" class="form-control" aria-label="Nome Prospecto" aria-describedby="Nome Prospecto">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Descrição</span>
+        </div>
+        <textarea [(ngModel)]="oportunidade.descricao" class="form-control" aria-label="Com textarea"></textarea>
+      </div>
+      <div class="input-group mb-3" style="margin-top: 20px">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Valor</span>
+          </div>
+          <input [(ngModel)]="oportunidade.valor" type="text" class="form-control" aria-label="Quantia">
+      </div>
+
+      <button class="btn btn-primary" style="margin-top: 10px"type="submit" (click)="adicionar()">Adicionar</button>
+</div>
+
+
+<table class="table">
+  <tr>
+    <th>NomeProspecto</th>
+    <th>Descrição</th>
+    <th>Valor</th>
+  </tr>
+  <tr *ngFor="let oportunidade of oportunidades" >
+    <th>{{oportunidade.nomeProspecto}}</th>
+    <th>{{oportunidade.descricao}}</th>
+    <th>{{oportunidade.valor}}</th>
+  </tr>
+</table>
