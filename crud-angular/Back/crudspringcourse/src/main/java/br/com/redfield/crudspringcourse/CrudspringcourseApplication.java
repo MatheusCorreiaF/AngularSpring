@@ -18,15 +18,16 @@ public class CrudspringcourseApplication {
 	public CommandLineRunner initDatabaseDev(CourseRepository courseRepository) {
 		return args -> {
 			courseRepository.deleteAll();
+
 			Course course = new Course();
 			course.setName("Angular");
 			course.setCategory("frontend");
 			courseRepository.save(course);
+
 			Course course2 = new Course();
-			course2.setName("Angular2");
-			course2.setCategory("frontend2");
+			course2.setName("Spring");
+			course2.setCategory("backend");
 			courseRepository.save(course2);
-			courseRepository.save(course);
 		};
 	}
 
